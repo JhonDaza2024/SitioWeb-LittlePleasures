@@ -1,0 +1,282 @@
+/* Encabezado*/
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: #0F536A;
+    margin: 0;
+}
+
+header {
+    background-color: #0F536A;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+header h1 {
+    font-size: 4em;
+    margin: 0;
+}
+
+header img {
+    display: block;
+    margin: 10px auto;
+    width: 300px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 170px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.7em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FF639F;
+}
+
+/* Sección Nosotros */
+#nosotros {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1em;
+    gap: 30px;
+}
+
+.quienes-somos, .mision-vision {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    line-height: 0.7cm;
+}
+
+.quienes-somos img, .mision-vision img {
+    width: 400px;
+    border-radius: 10px;
+}
+
+.quienes-somos div, .mision-vision div {
+    max-width: 600px;
+}
+
+h2 {
+    color: #1599AD;
+    font-size: 2em;
+    margin: 0;
+}
+
+h3 {
+    color: #FAA535;
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+/* Video */
+.video-container {
+    text-align: center;
+    width: 100%;
+}
+
+.video-container video {
+    width: 70%;
+    max-width: 800px;
+    border-radius: 8px;
+}
+
+/* Sección Comentarios */
+.comentarios {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.comentarios h2 {
+    color: #1599AD;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.comentarios input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comentarios button {
+    background-color: #FAA535;
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comentarios button:hover {
+    background-color: #FED184;
+}
+
+/* Pie de página */
+footer {
+    background-color: #0F536A;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+
+
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 3em;
+    }
+
+    nav ul {
+        gap: 95px;
+    }
+    
+    nav ul li a {
+        font-size: 1.5em;
+    }
+
+    .quienes-somos, .mision-vision {
+        gap: 40px;
+    }
+
+    .quienes-somos img, .mision-vision img {
+        width: 45%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    h3 {
+        font-size: 1.8em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    .comentarios h2 {
+        font-size: 1.8em;
+    }
+
+    .video-container video {
+        width: 80%;
+    }
+
+    .comentarios input[type="text"] {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav ul li a {
+        font-size: 1.3em;
+    }
+
+    header img {
+        width: 250px;
+    }
+
+    .quienes-somos img, .mision-vision img {
+        width: 40%;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+    
+    h3 {
+        font-size: 1.6em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        font-size: 0.9em;
+    }
+
+    .comentarios h2 {
+        font-size: 1.6em;
+    }
+
+    .comentarios button {
+        font-size: 0.8em;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 1.18em;
+    }
+
+    .quienes-somos, .mision-vision {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .quienes-somos img, .mision-vision img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .comentarios input[type="text"] {
+        font-size: 0.8em;
+    }
+
+    .comentarios button {
+        font-size: 0.7em;
+        padding: 6px 10px;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}

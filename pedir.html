@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/stylePedir.css">
+    <title>LITTLE PLEASURES - PEDIR</title>
+</head>
+<body>
+    <header>
+        <h1>Little Pleasures</h1>
+        <img src="images/logo.png" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#pedir">Pedir</a></li>
+                <li><a href="#contactanos">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="pedir">
+        <div class="intro-section">
+            <img src="images/imagen10.jpg" alt="Imagen pasabocas 3">
+            <p>¡Para hacer tu pedido en Little Pleasures es fácil y rápido! Aquí te explicamos cómo puedes realizar tu orden para disfrutar de nuestros deliciosos pasabocas en tu próximo evento:<br>
+            Selecciona la Cantidad de cada producto que tienen un mínimo requerido de 15 unidades. Para ajustar la cantidad que deseas, utiliza los iconos “-” y “+” que encontrarás debajo de la imagen de cada producto. Las unidades aumentarán o disminuirán de 15 en 15, permitiéndote elegir la cantidad que necesitas.<br>
+            Una vez hayas ajustado las cantidades, completa el formulario con tus datos. Asegúrate de ingresar toda la información necesaria para que podamos procesar tu orden de manera eficiente.<br>
+            En el icono Total, podrás ver la suma de los valores de los productos seleccionados. Esto te permitirá revisar el costo total de tu pedido antes de enviarlo.<br>
+            Por último, haz clic en el botón Pedir para enviar tu solicitud. Tu orden será enviada a nuestro chat de WhatsApp, donde uno de nuestros representantes se pondrá en contacto contigo para ultimar los detalles, como la fecha y hora de entrega, y el medio de pago.</p>
+        </div>
+        <div class="productos-lista">
+            <div class="producto">
+                <h3>$1000</h3>
+                <img src="images/imagen4.jpg" alt="Mini Cupcakes de Chocolate">
+                <div class="quantity-control">
+                    <button onclick="restarCantidad(1, 1000)">-</button>
+                    <input id="cantidad1" type="text" value="0" readonly>
+                    <button onclick="sumarCantidad(1, 1000)">+</button>
+                </div>
+            </div>
+            <div class="producto">
+                <h3>$2000</h3>
+                <img src="images/imagen5.jpg" alt="Bocaditos de Cheesecake">
+                <div class="quantity-control">
+                    <button onclick="restarCantidad(2, 2000)">-</button>
+                    <input id="cantidad2" type="text" value="0" readonly>
+                    <button onclick="sumarCantidad(2, 2000)">+</button>
+                </div>
+            </div>
+            <div class="producto">
+                <h3>$1000</h3>
+                <img src="images/imagen6.jpg" alt="Rollitos de Jamón y Queso">
+                <div class="quantity-control">
+                    <button onclick="restarCantidad(3, 1000)">-</button>
+                    <input id="cantidad3" type="text" value="0" readonly>
+                    <button onclick="sumarCantidad(3, 1000)">+</button>
+                </div>
+            </div>
+            <div class="producto">
+                <h3>$2500</h3>
+                <img src="images/imagen7.jpg" alt="Empanadillas de Espinacas y Ricotta">
+                <div class="quantity-control">
+                    <button onclick="restarCantidad(4, 2500)">-</button>
+                    <input id="cantidad4" type="text" value="0" readonly>
+                    <button onclick="sumarCantidad(4, 2500)">+</button>
+                </div>
+            </div>
+            <div class="producto">
+                <h3>$3000</h3>
+                <img src="images/imagen8.jpg" alt="Brochetas de Pollo con Salsa Agridulce">
+                <div class="quantity-control">
+                    <button onclick="restarCantidad(5, 3000)">-</button>
+                    <input id="cantidad5" type="text" value="0" readonly>
+                    <button onclick="sumarCantidad(5, 3000)">+</button>
+                </div>
+            </div>
+            <div class="producto">
+                <h3>$1500</h3>
+                <img src="images/imagen9.jpg" alt="Rollitos de Primavera con Salsa de Ciruela">
+                <div class="quantity-control">
+                    <button onclick="restarCantidad(6, 1500)">-</button>
+                    <input id="cantidad6" type="text" value="0" readonly>
+                    <button onclick="sumarCantidad(6, 1500)">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="pedido-container">
+            <div class="formulario-pedido">
+                <h3>Formulario de Pedido</h3>
+                <form>
+                    <label for="nombre">Nombre y apellido:</label>
+                    <input type="text" id="nombre" name="nombre" required><br>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" required><br>
+                </form>
+            </div>
+            <div class="total-pedido">
+                <h3>TOTAL: <span id="total">$0</span></h3>
+                <button onclick="enviarPedido()">PEDIR</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        Jhon Daza / Little Pleasures / Copyright © 2024 Todos los derechos reservados
+    </footer>
+    <script>
+        function sumarCantidad(producto,precio) {
+            var input = document.getElementById('cantidad' + producto);
+            var valor = parseInt(input.value);
+            input.value = valor + 15;
+            actualizarTotal();
+        }
+        function restarCantidad(producto,precio) {
+            var input = document.getElementById('cantidad' + producto);
+            var valor = parseInt(input.value);
+            if (valor >= 15) {
+                input.value = valor - 15;
+            }
+            actualizarTotal();
+        }
+        function actualizarTotal() {
+            var total = 0;
+            for (var i = 1; i <= 6; i++) {
+                var cantidad = parseInt(document.getElementById('cantidad' + i).value);
+                var precio = parseInt(document.querySelectorAll("h3")[i-1].textContent.replace('$', ''));
+                total += cantidad * precio;
+            }
+            document.getElementById('total').textContent = '$' + total;
+        }
+        function enviarPedido() {
+            var nombre = document.getElementById('nombre').value;
+            var telefono = document.getElementById('telefono').value;
+            var total = document.getElementById('total').textContent;
+            var mensaje = `Pedido de Little Pleasures%0A`;
+            mensaje += `Nombre: ${nombre}%0A`;
+            mensaje += `Teléfono: ${telefono}%0A`;
+            mensaje += `Productos:%0A`;
+
+            for (var i = 1; i <= 6; i++) {
+                var cantidad = parseInt(document.getElementById('cantidad' + i).value);
+                if (cantidad > 0) {
+                    var descripcion = document.querySelectorAll("img")[i].alt;
+                    mensaje += `${descripcion}: ${cantidad} unidades%0A`;
+                }
+            }
+
+            mensaje += `Total: ${total}`;
+
+            var numeroWhatsApp = "3112536737";
+            var url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+            window.open(url, '_blank');
+
+            alert('Tu pedido ha sido enviado. Pronto nos pondremos en contacto contigo a través de WhatsApp. ¡Gracias por confiar en nosotros!');
+
+            document.body.innerHTML = `
+                <h2>Tu pedido ha sido enviado.</h2>
+                <p>Cliente: ${nombre}</p>
+                <p>Precio: ${total}</p>
+                <button onclick="location.href='#inicio'">Regresar al inicio</button>
+            `;
+        }
+    </script>
+</body>
+</html>

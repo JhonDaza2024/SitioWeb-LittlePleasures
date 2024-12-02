@@ -1,0 +1,212 @@
+/* Encabezado*/
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: #0F536A;
+    margin: 0;
+}
+
+header {
+    background-color: #0F536A;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+header h1 {
+    font-size: 4em;
+    margin: 0;
+}
+
+header img {
+    display: block;
+    margin: 10px auto;
+    width: 300px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 170px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.7em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FF639F;
+}
+
+/* Sección "Inicio" */
+#inicio {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+}
+
+#inicio div:first-child img {
+    width: 550px;
+    border-radius: 8px;
+}
+
+#inicio div:last-child {
+    margin-left: 30px;
+    max-width: 600px;
+}
+
+#inicio h2 {
+    color: #1599AD;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+#inicio p {
+    color: #0F536A;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+#inicio button {
+    background-color: #FAA535;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: background-color 0.3s;
+}
+
+#inicio button:hover {
+    background-color: #FED184;
+}
+
+/* Pie de página */
+footer {
+    background-color: #0F536A;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+
+
+@media (max-width: 1024px) {
+    #inicio {
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+
+    nav ul {
+        gap: 95px;
+    }
+    
+    nav ul li a {
+        font-size: 1.5em;
+    }
+
+    #inicio div:first-child img {
+        width: 90%;
+    }
+
+    #inicio h2 {
+        font-size: 1.8em;
+    }
+
+    #inicio p {
+        font-size: 1em;
+    }
+
+    #inicio div:last-child {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #inicio {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav ul li a {
+        font-size: 1.3em;
+    }
+
+    header img {
+        width: 250px;
+    }
+
+    #inicio div:first-child img {
+        width: 90%;
+    }
+
+    #inicio h2 {
+        font-size: 1.6em;
+    }
+
+    #inicio p {
+        font-size: 0.9em;
+    }
+
+    #inicio button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    #inicio {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 1.18em;
+    }
+
+    #inicio div:first-child img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #inicio p {
+        font-size: 1em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
